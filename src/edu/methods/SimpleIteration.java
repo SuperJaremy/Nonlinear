@@ -25,14 +25,10 @@ public class SimpleIteration extends Method {
             return false;
         }
         x = (a + b) / 2;
-        double f_x = equation.getFunction().apply(x);
-        double phi_x = normalizedFunction.apply(x);
         do {
             previousX = x;
             x = normalizedFunction.apply(previousX);
             step++;
-            f_x = equation.getFunction().apply(x);
-            phi_x = normalizedFunction.apply(x);
         } while (step < LIMIT && !checkExit());
         return true;
     }
